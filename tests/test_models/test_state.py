@@ -1,19 +1,16 @@
 #!/usr/bin/python3
-""" """
-from tests.test_models.test_base_model import test_basemodel
+"""Module to test State class"""
+
+
 from models.state import State
+from tests.test_models.test_base_model import TestBaseModel
 
 
-class test_state(test_basemodel):
-    """ """
+class TestState(TestBaseModel):
+    """Tests for State class"""
 
-    def __init__(self, *args, **kwargs):
-        """ """
-        super().__init__(*args, **kwargs)
-        self.name = "State"
-        self.value = State
-
-    def test_name3(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.name), str)
+    def setUp(self):
+        """Set up which instance to call"""
+        self._class = State()
+        self._class2 = State()
+        self._name = "State"
